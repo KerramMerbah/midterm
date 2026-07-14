@@ -1,0 +1,249 @@
+/* Basic page reset keeps spacing predictable in all browsers. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #f6ead5;
+  color: #2f241f;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* The content is centred and limited so it stays easy to read. */
+.site-wrapper {
+  width: min(100% - 2rem, 1024px);
+  margin: 1.5rem auto;
+  background-color: #fffaf1;
+  box-shadow: 0 0 22px rgba(64, 43, 31, 0.18);
+}
+
+/* Header image is positioned behind the main title. */
+.site-header {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+}
+
+.site-header img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+.site-header h1 {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  margin: 0;
+  color: #fffaf1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-shadow: 0 4px 14px rgba(38, 18, 8, 0.75);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* Navigation is built with a semantic list. */
+.main-nav {
+  background-color: #d75b23;
+}
+
+.main-nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav li + li {
+  border-left: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.main-nav a {
+  display: block;
+  padding: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: #963a17;
+}
+
+main {
+  padding: 2rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  color: #6c2d18;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: normal;
+}
+
+.story::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* Float creates the required text wrapping effect. */
+.article-image {
+  float: left;
+  width: min(43%, 340px);
+  margin: 0.35rem 1.5rem 0.75rem 0;
+  border: 5px solid #f0b84a;
+}
+
+.story p {
+  margin-top: 0;
+}
+
+.facts {
+  margin-top: 2.25rem;
+  padding: 1.5rem;
+  background-color: #f7d98f;
+  border-left: 8px solid #d75b23;
+}
+
+.facts ul {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.facts li + li {
+  margin-top: 0.6rem;
+}
+
+.contact {
+  margin-top: 2.25rem;
+  padding: 1.5rem;
+  border: 2px solid #d75b23;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label,
+fieldset legend {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #8d796d;
+  background-color: #ffffff;
+  color: #2f241f;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid #f0b84a;
+  outline-offset: 2px;
+}
+
+fieldset {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #8d796d;
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  align-items: center;
+}
+
+.choice-row label {
+  margin-right: 0.8rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: 0;
+  background-color: #d75b23;
+  color: #ffffff;
+  font: inherit;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #963a17;
+}
+
+footer {
+  padding: 1rem 2rem;
+  background-color: #4d3428;
+  color: #ffffff;
+  text-align: right;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Small screens use a stacked article image and tighter spacing. */
+@media (max-width: 600px) {
+  .site-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+
+  .site-header,
+  .site-header img {
+    min-height: 240px;
+    height: 240px;
+  }
+
+  .site-header h1 {
+    white-space: normal;
+  }
+
+  .main-nav a {
+    padding: 0.8rem 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 1.25rem;
+  }
+
+  .article-image {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  .facts,
+  .contact {
+    padding: 1rem;
+  }
+}
