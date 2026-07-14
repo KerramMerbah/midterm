@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A single-page website about the life and migration of monarch butterflies.">
+  <title>Monarch Journey</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- The header image and title are grouped together so the title can sit over the image. -->
+    <header class="site-header" id="home">
+      <img src="images/monarch-wide.svg" alt="Monarch butterflies flying through a warm sunset sky">
+      <h1>Monarch Journey</h1>
+    </header>
+
+    <!-- Main navigation links jump to sections on this page. -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- The article image floats on larger screens so the paragraph wraps around it. -->
+      <article class="story" id="story">
+        <h2>Life of a Monarch Butterfly</h2>
+        <img class="article-image" src="images/monarch-close.svg" alt="A monarch butterfly resting on purple flowers">
+        <p>
+          Monarch butterflies begin their lives as tiny eggs placed underneath milkweed leaves. After hatching, the striped caterpillars spend most of their time eating milkweed and growing. This plant is important because it is the only food monarch caterpillars can use during this stage of life.
+        </p>
+        <p>
+          Once fully grown, the caterpillar forms a bright green chrysalis. Inside, it changes completely before emerging as an orange-and-black adult butterfly. The new butterfly waits for its wings to dry, then begins searching for nectar-rich flowers.
+        </p>
+        <p>
+          Monarchs are best known for their long seasonal migration. Some travel thousands of kilometres from Canada and the United States to forests in central Mexico. No single butterfly completes the entire round trip. Instead, several generations continue the journey, guided by sunlight, temperature, and an inherited sense of direction.
+        </p>
+      </article>
+
+      <!-- A proper unordered list is used for the butterfly facts. -->
+      <section class="facts" aria-labelledby="facts-title">
+        <h2 id="facts-title">Facts About Monarchs</h2>
+        <ul>
+          <li>Monarch wings are orange with black veins and white spots.</li>
+          <li>Milkweed protects caterpillars by making them unpleasant to predators.</li>
+          <li>An adult monarch usually has a wingspan of about nine to ten centimetres.</li>
+          <li>Migrating monarchs can travel roughly 80 to 160 kilometres in one day.</li>
+        </ul>
+      </section>
+
+      <!-- Every form control has a matching label using the for and id attributes. -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Join the Garden Watch</h2>
+        <form action="#" method="post">
+          <div class="form-field">
+            <label for="fullname">Your Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <fieldset>
+            <legend>Would you like to plant milkweed?</legend>
+            <div class="choice-row">
+              <input type="radio" id="choice-yes" name="milkweed" value="yes">
+              <label for="choice-yes">Yes</label>
+
+              <input type="radio" id="choice-no" name="milkweed" value="no">
+              <label for="choice-no">No</label>
+
+              <input type="radio" id="choice-maybe" name="milkweed" value="maybe">
+              <label for="choice-maybe">Maybe</label>
+            </div>
+          </fieldset>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Monarch Journey</p>
+    </footer>
+  </div>
+</body>
+</html>
